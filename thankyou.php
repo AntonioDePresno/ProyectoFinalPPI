@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Fashion | Productos</title>
+    <title>Fashion | Compra</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -21,6 +21,7 @@
     
   </head>
   <body>
+  
   <?php
     session_start();
     $usuario="";
@@ -30,19 +31,21 @@
       $cerrar="Cerrar Sesion";
     }
   ?>
-    <div class="site-wrap">
-      <div class="site-navbar bg-white py-2">
-  
-        <div class="search-wrap">
-          <div class="container">
-            <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
-            <form action="#" method="post">
-              <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
-            </form>  
-          </div>
-        </div>
-  
+
+  <div class="site-wrap">
+    
+
+    <div class="site-navbar bg-white py-2">
+
+      <div class="search-wrap">
         <div class="container">
+          <form action="#" method="post">
+            <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+          </form>  
+        </div>
+      </div>
+
+      <div class="container">
           <div class="d-flex align-items-center justify-content-between">
             <div class="logo">
               <div class="site-logo">
@@ -52,7 +55,7 @@
             <div class="main-nav d-none d-lg-block">
               <nav class="site-navigation text-right text-md-center" role="navigation">
                 <ul class="site-menu js-clone-nav d-none d-lg-block">
-                  <li><a href="index.php">INICIO</a></li>
+                  <li><a href="#">INICIO</a></li>
                   <li><a href="shop.php">Productos</a></li>
                 </ul>
               </nav>
@@ -69,55 +72,27 @@
             </div>
           </div>
         </div>
-      </div>
-
-    <div class="custom-border-bottom py-3">
+    
+    <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="index.html">Inicio</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Productos</strong></div>
+          <div class="col-md-12 mb-0"><a href="index.php">Inicio</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Thank You</strong></div>
         </div>
       </div>
-    </div>
+    </div>  
+
     <div class="site-section">
       <div class="container">
-
-        <div class="row mb-5">
-          <div class="col-md-9 order-1">
-            <div class="row align">
-              <div class="col-md-12 mb-5">
-                <div class="float-md-left"><h1 class="text-black h5">Todos los Productos</h1></div>
-              </div>
-            </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <span class="icon-check_circle display-3 text-success"></span>
             <?php
-              $nombre=$precio=$img="";
-              $con = mysqli_connect("localhost","root","","ProyectoFinalPPI");
-
-              $query="SELECT * FROM producto;";
-              $result=mysqli_query($con,$query);
-
-              while($row=mysqli_fetch_array($result)){
-                $precio=$row['precioproducto'];
-                $nombre=$row['nombreproducto'];
-                $img=$row['imagen'];
-                $idproducto=$row['idproducto'];
-                echo "<div class='row mb-3'>";
-                echo "<div class='col-lg-4 col-md-4 item-entry mb-4'>";
-                echo "<a href=# class='product-item md-height bg-gray d-block'>";
-                echo "<img src='". $img ."' alt='Image class=img-fluid'>";
-                echo "</a>";
-                echo "<h2 class='item-title'>". $nombre ."</h2>";
-                echo "<strong class='item-price'>". $precio ."</strong>";
-                echo "<form action='shop-single.php' method='post'>";
-                echo "<input type='submit' value='Ver mas'>";
-                echo "</form>";
-                echo "</div>";
-                echo "</div>";
-              }
+            echo "<h2 class='display-3 text-black'>Gracias Por tu Compra ". $usuario ."</h2>";
             ?>
-            
+            <p class="lead mb-5">Orden Completada con Exito.</p>
+            <p><a href="shop.php" class="btn btn-sm height-auto px-4 py-3 btn-primary">Sigue Comprando</a></p>
           </div>
         </div>
-
       </div>
     </div>
   </div>

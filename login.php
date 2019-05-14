@@ -36,6 +36,7 @@
 
                 }
                 if($admin==1){
+                    $_SESSION["admin"]=$admin;
                     mysqli_close($con);
                     header("Location: admin.php");
                 }else{

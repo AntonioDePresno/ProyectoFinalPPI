@@ -25,7 +25,7 @@
     session_start();
     $usuario="";
     $cerrar="";
-    if(isset($_SESSION["usuario"])){
+    if(isset($_SESSION["admin"])){
       $usuario=$_SESSION["usuario"];
       $cerrar="Cerrar Sesion";
     }else{
@@ -48,13 +48,13 @@
         <div class="d-flex align-items-center justify-content-between">
           <div class="logo">
             <div class="site-logo">
-              <a href="index.html" class="js-logo-clone">Fashion</a>
+              <a href="index.php" class="js-logo-clone">Fashion</a>
             </div>
           </div>
           <div class="main-nav d-none d-lg-block">
             <nav class="site-navigation text-right text-md-center" role="navigation">
               <ul class="site-menu js-clone-nav d-none d-lg-block">
-                <li><a href="#">INICIO</a></li>
+                <li><a href="index.php">INICIO</a></li>
                 <li><a href="shop.php">Productos</a></li>
               </ul>
             </nav>
@@ -73,7 +73,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h1>Agregar un Producto</h1>
+            <h1 style="color:black">Agregar un Producto</h1>
                 <form action="#">
                     <div class="form-group row mb-5">
                         <div class="col-md-12">
@@ -111,24 +111,7 @@
                 </form>
             </div>
         </div>
-    </div> 
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-          <h1>Modificar un producto</h1>
-            
-        </div>
-    </div>
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 mb-5 mb-md-0">
-            <h1>Historial de Ventas</h1>
-
-
-            </div>
-        </div>
+        
     </div>
     
             
