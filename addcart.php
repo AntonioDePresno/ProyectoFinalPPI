@@ -8,7 +8,7 @@
 
 
         $con = mysqli_connect("localhost","root","","ProyectoFinalPPI");
-        $query = "INSERT into carrito VALUES ('$idusuario','$producto','$cantidad') ;";
+        $query = "INSERT into carrito VALUES ('$producto','$idusuario','$cantidad') ;";
 
         mysqli_query($con,$query);
         mysqli_close($con);
