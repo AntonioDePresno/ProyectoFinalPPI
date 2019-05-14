@@ -21,6 +21,130 @@
     
   </head>
   <body>
+  <?php
+    session_start();
+    $usuario="";
+    $cerrar="";
+    if(isset($_SESSION["usuario"])){
+      $usuario=$_SESSION["usuario"];
+      $cerrar="Cerrar Sesion";
+    }else{
+        //header("Location: login.html");
+    }
+  ?>
+  <div class="site-wrap">
+    <div class="site-navbar bg-white py-2">
 
+      <div class="search-wrap">
+        <div class="container">
+          <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+          <form action="#" method="post">
+            <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+          </form>  
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="logo">
+            <div class="site-logo">
+              <a href="index.html" class="js-logo-clone">Fashion</a>
+            </div>
+          </div>
+          <div class="main-nav d-none d-lg-block">
+            <nav class="site-navigation text-right text-md-center" role="navigation">
+              <ul class="site-menu js-clone-nav d-none d-lg-block">
+                <li><a href="#">INICIO</a></li>
+                <li><a href="shop.php">Productos</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="icons">
+            <a href="login.html" class="icons-btn d-inline-block bag">
+              <span class="icon-user"></span>
+            </a>
+            <span><?php echo $usuario ?></span>
+            <a href="cerrar.php"><?php echo $cerrar?></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h1>Agregar un Producto</h1>
+                <form action="#">
+                    <div class="form-group row mb-5">
+                        <div class="col-md-12">
+                            <label for="nombre" class="text-black">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="precio" class="text-black">Precio</label>
+                            <input type="text" class="form-control" id="precio" name="precio" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="descripcion" class="text-black">Descripcion</label>
+                            <textarea rows=4 cols=50 class="form-control" id="descripcion" name="descripcion" required>
+                            </textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="stock" class="text-black">Stock</label>
+                            <input type="text" class="form-control" id="stock" name="stock" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="fabricante" class="text-black">Fabricante</label>
+                            <input type="text" class="form-control" id="fabricante" name="fabricante" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="origen" class="text-black">Origen</label>
+                            <input type="text" class="form-control" id="origen" name="origen" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="img" class=text-black>Imagen</label>
+                            <input type="file" class="form-control" id="img" name="img" required>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Agregar">
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div> 
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+          <h1>Modificar un producto</h1>
+            
+        </div>
+    </div>
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mb-5 mb-md-0">
+            <h1>Historial de Ventas</h1>
+
+
+            </div>
+        </div>
+    </div>
+    
+            
+    
+    
+    
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+    
   </body>
 </html>

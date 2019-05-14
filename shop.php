@@ -99,13 +99,17 @@
                 $precio=$row['precioproducto'];
                 $nombre=$row['nombreproducto'];
                 $img=$row['imagen'];
+                $idproducto=$row['idproducto'];
                 echo "<div class=row mb-3>";
                 echo "<div class=col-lg-4 col-md-4 item-entry mb-4>";
-                echo "<a href=# class=product-item md-height bg-gray d-block>";
+                echo "<a href=shop-single.php class=product-item md-height bg-gray d-block>";
                 echo "<img src=". $img ." alt=Image class=img-fluid>";
                 echo "</a>";
-                echo "<h2 class=item-title><a href=#>". $nombre ."</a></h2>";
+                echo "<h2 class=item-title>". $nombre ."</h2>";
                 echo "<strong class=item-price>". $precio ."</strong>";
+                echo "<form action=shop-single.php method=post>";
+                echo "<input type=submit value=Ver mas>";
+                echo "</form>";
                 echo "</div>";
                 echo "</div>";
               }

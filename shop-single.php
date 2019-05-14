@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ShopMax &mdash; Colorlib e-Commerce Template</title>
+    <title>Fasion | Single</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -21,7 +21,15 @@
     
   </head>
   <body>
-  
+    <?php
+      session_start();
+      $usuario="";
+      $cerrar="";
+      if(isset($_SESSION["usuario"])){
+        $usuario=$_SESSION["usuario"];
+        $cerrar="Cerrar Sesion";
+      }
+    ?>
     <div class="site-wrap">
       <div class="site-navbar bg-white py-2">
   
@@ -38,15 +46,14 @@
           <div class="d-flex align-items-center justify-content-between">
             <div class="logo">
               <div class="site-logo">
-                <a href="index.html" class="js-logo-clone">Audiotecnica</a>
+                <a href="index.html" class="js-logo-clone">Fashion</a>
               </div>
             </div>
             <div class="main-nav d-none d-lg-block">
               <nav class="site-navigation text-right text-md-center" role="navigation">
                 <ul class="site-menu js-clone-nav d-none d-lg-block">
-                  <li><a href="index.html">INICIO</a></li>
-                  <li><a href="shop.html">Productos</a></li>
-                  <li><a href="contact.html">Contacto</a></li>
+                  <li><a href="index.php">INICIO</a></li>
+                  <li><a href="shop.php">Productos</a></li>
                 </ul>
               </nav>
             </div>
@@ -57,6 +64,8 @@
               <a href="login.html" class="icons-btn d-inline-block bag">
                 <span class="icon-user"></span>
               </a>
+              <span><?php echo $usuario ?></span>
+              <a href="cerrar.php"><?php echo $cerrar?></a>
             </div>
           </div>
         </div>
