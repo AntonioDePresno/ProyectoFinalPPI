@@ -89,6 +89,7 @@
               </div>
             </div>
             <?php
+              
               $nombre=$precio=$img="";
               $con = mysqli_connect("localhost","root","","ProyectoFinalPPI");
 
@@ -100,21 +101,20 @@
                 $nombre=$row['nombreproducto'];
                 $img=$row['imagen'];
                 $idproducto=$row['idproducto'];
-                echo "<div class='row mb-3'>";
-                echo "<div class='col-lg-4 col-md-4 item-entry mb-4'>";
+                echo "<div class='row mb-5'>";
+                echo "<div class='col-lg-6 col-md-6 item-entry mb-6'>";
                 echo "<a href=# class='product-item md-height bg-gray d-block'>";
-                echo "<img src='". $img ."' alt='Image class=img-fluid'>";
+                echo "<img src='./img/". $img ."'alt='Image class=img-fluid'>";
                 echo "</a>";
                 echo "<h2 class='item-title'>". $nombre ."</h2>";
-                echo "<strong class='item-price'>". $precio ."</strong>";
-                echo "<form action='shop-single.php' method='post'>";
-                echo "<input type='submit' value='Ver mas'>";
+                echo "<strong class='item-price'>Precio: ". $precio ."</strong>";
+                echo "<form action='shop-single.php' method='get'>";
+                echo "<button class='btn btn-primary btn-lg btn-block' name=producto value='". $idproducto ."'>Ver mas</button>";
                 echo "</form>";
                 echo "</div>";
                 echo "</div>";
               }
-            ?>
-            
+            ?>        
           </div>
         </div>
 

@@ -72,8 +72,8 @@
     <div class="site-section">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
-            <h1 style="color:black">Agregar un Producto</h1>
+          <div class="col-md-12">
+            <h2 style="color:black">Agregar un Producto</h2>
                 <form action="#">
                     <div class="form-group row mb-5">
                         <div class="col-md-12">
@@ -111,14 +111,33 @@
                 </form>
             </div>
         </div>
-        
+        <div class="site-section">
+            <div class="container">
+                <div class="row">
+                <div class="col-md-12">
+                    <h2 style="color:black">Modificar un Producto</h2>
+                        <form action="#" metho="POST">
+                            <div class="form-group row mb-5">
+                                <div class="col-md-12">
+                                    <label for="id" class="text-black">ID del Producto</label>
+                                    <input type="text" class="form-control" id="id" name="id" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="nombre" class="text-black">Nombre del Producto</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="descripcion" class="text-black">Descripcion</label>
+                                    <textarea rows=4 cols=50 class="form-control" id="descripcion" name="descripcion" required>
+                                    </textarea>
+                                </div>
+                            </div> 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
-            
-    
-    
-    
-
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
   <script src="js/popper.min.js"></script>
