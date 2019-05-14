@@ -88,7 +88,7 @@
     <div class="site-section">
       <div class="container">
         <div class="row mb-5">
-          <form class="col-md-12" method="post">
+          <form action="updatecart.php" class="col-md-12" method="get">
             <div class="site-blocks-table">
               <table class="table table-bordered">
                 <thead>
@@ -126,11 +126,12 @@
                         echo "<td>". $precio ."</td>";
                         echo "<td>". $cantidad . "</td>";
                         echo "</div>";
-                        echo "<td><a href='#' class='btn btn-primary height-auto btn-sm'>X</a></td>";
+                        echo "<td><button class='btn btn-primary height-auto btn-sm' name=elimina value='". $idproducto ."'>X</a></td>";
 
                       }
                       echo "</tr>";
                     }
+                    mysqli_close($con);
                     ?>
                 </tbody>
               </table>
@@ -150,7 +151,7 @@
             <div class="row justify-content-end">
                 <div class="row">
                   <div class="col-md-12">
-                    <button class="btn btn-primary btn-lg btn-block" onclick="window.location='thankyou.php'">Comprar</button>
+                    <button class="btn btn-primary btn-lg btn-block" onclick="window.location='compra.php'">Comprar</button>
                   </div>
                 </div>
               </div>
