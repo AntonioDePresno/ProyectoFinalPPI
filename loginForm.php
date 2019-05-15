@@ -21,7 +21,13 @@
     
   </head>
   <body>
-    
+    <?php
+      session_start();
+
+      if(isset($_SESSION['id'])){
+        header("Location: user.php");
+      }
+    ?>
     <div class="site-wrap">
       <div class="site-navbar bg-white py-2">
   

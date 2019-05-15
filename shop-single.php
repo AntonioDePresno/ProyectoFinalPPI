@@ -79,10 +79,10 @@
               </nav>
             </div>
             <div class="icons">
-              <a href="cart.html" class="icons-btn d-inline-block bag">
+              <a href="cart.php" class="icons-btn d-inline-block bag">
                 <span class="icon-shopping-bag"></span>
               </a>
-              <a href="login.html" class="icons-btn d-inline-block bag">
+              <a href="loginForm.php" class="icons-btn d-inline-block bag">
                 <span class="icon-user"></span>
               </a>
               <span><?php echo $usuario ?></span>
@@ -109,7 +109,7 @@
             <div class="item-entry">
               <a href="#" class="product-item md-height bg-gray d-block">
                 <?php
-                echo "<img src='". $img ."' alt='Image' class='img-fluid'>";
+                echo "<img src='./images/". $img ."' alt='Image' class='img-fluid'>";
                 ?>
               </a>
             </div>

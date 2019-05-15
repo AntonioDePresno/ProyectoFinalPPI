@@ -60,7 +60,7 @@
             </nav>
           </div>
           <div class="icons">
-            <a href="login.html" class="icons-btn d-inline-block bag">
+            <a href="loginForm.php" class="icons-btn d-inline-block bag">
               <span class="icon-user"></span>
             </a>
             <span><?php echo $usuario ?></span>
@@ -74,7 +74,7 @@
         <div class="row">
           <div class="col-md-12">
             <h2 style="color:black">Agregar un Producto</h2>
-                <form action="#">
+                <form action="addproduct.php" method="POST">
                     <div class="form-group row mb-5">
                         <div class="col-md-12">
                             <label for="nombre" class="text-black">Nombre</label>
@@ -82,7 +82,7 @@
                         </div>
                         <div class="col-md-12">
                             <label for="precio" class="text-black">Precio</label>
-                            <input type="text" class="form-control" id="precio" name="precio" required>
+                            <input type="number" class="form-control" id="precio" name="precio" required>
                         </div>
                         <div class="col-md-12">
                             <label for="descripcion" class="text-black">Descripcion</label>
@@ -91,7 +91,7 @@
                         </div>
                         <div class="col-md-12">
                             <label for="stock" class="text-black">Stock</label>
-                            <input type="text" class="form-control" id="stock" name="stock" required>
+                            <input type="number" class="form-control" id="stock" name="stock" required>
                         </div>
                         <div class="col-md-12">
                             <label for="fabricante" class="text-black">Fabricante</label>
@@ -102,8 +102,8 @@
                             <input type="text" class="form-control" id="origen" name="origen" required>
                         </div>
                         <div class="col-md-12">
-                            <label for="img" class=text-black>Imagen</label>
-                            <input type="file" class="form-control" id="img" name="img" required>
+                            <label for="img" class=text-black>Nombre de la Imagen</label>
+                            <input type="text" class="form-control" id="img" name="img" placeholder="Ej. imagen.png"required>
                         </div>
                         <div class="col-md-12">
                             <input type="submit" class="btn btn-primary btn-lg btn-block" value="Agregar">
@@ -116,26 +116,81 @@
                 <div class="row">
                 <div class="col-md-12">
                     <h2 style="color:black">Modificar un Producto</h2>
-                        <form action="#" metho="POST">
+                        <form action="modproduct.php" method="POST">
                             <div class="form-group row mb-5">
+                                <div class="col-md-6">
+                                    <label for="modifica" class="text-black"><strong>Modificar Producto</strong></label>
+                                    <input type="radio" class="form-control" id="opcion" name="opcion" value="modifica" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="modifica" class="text-black"><strong>Eliminar Producto</strong></label>
+                                    <input type="radio" class="form-control" id="opcion" name="opcion" value="elimina" required>
+                                </div>
                                 <div class="col-md-12">
                                     <label for="id" class="text-black">ID del Producto</label>
                                     <input type="text" class="form-control" id="id" name="id" required>
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="nombre" class="text-black">Nombre del Producto</label>
-                                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                    <label for="campo" class="text-black">Campo a Modificar</label>
+                                    <input type="text" class="form-control" id="campo" name="campo">
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="descripcion" class="text-black">Descripcion</label>
-                                    <textarea rows=4 cols=50 class="form-control" id="descripcion" name="descripcion" required>
-                                    </textarea>
+                                    <label for="valor" class="text-black">Nuevo Valor</label>
+                                    <input type="text" class="form-control" id="valor" name="valor">
+                                </div>
+                                <div class="col-md-12">
+                                  <input type="submit" class="btn btn-primary btn-lg btn-block" value="Confirmar">
                                 </div>
                             </div> 
                         </form>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="site-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h2 style="color:black">Historial de Compras</h2>
+                <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th class="product-name"># Transaccion</th>
+                    <th class="product-name">ID Usuario</th>
+                    <th class="product-name">ID Producto</th>
+                    <th class="product-name">Cantidad</th>
+                    <th class="product-name">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                    $transaccion=$usuario=$producto=$cantidad=$total="";
+                    $con=mysqli_connect("localhost","root","","ProyectoFinalPPI");
+                    $query="SELECT * FROM historial;";
+                    $result=mysqli_query($con,$query);
+                    
+                    while($row=mysqli_fetch_array($result)){
+                      $transaccion=$row['idtransaccion'];
+                      $usuario=$row['idusuario'];
+                      $producto=$row['idproducto'];
+                      $cantidad=$row['cantidad'];
+                      $total=$row['total'];
+                      echo "<tr>";
+                      echo "<td><h2 class='h5 text-black'>". $transaccion ."</h2></td>";
+                      echo "<td><h2 class='h5 text-black'>". $usuario ."</h2></td>";
+                      echo "<td><h2 class='h5 text-black'>". $producto ."</h2></td>";
+                      echo "<td><h2 class='h5 text-black'>". $cantidad ."</h2></td>";
+                      echo "<td><h2 class='h5 text-black'>$". $total ."</h2></td>";
+                      echo "</tr>";
+                    }
+
+                  ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
         </div>
     </div>
   <script src="js/jquery-3.3.1.min.js"></script>

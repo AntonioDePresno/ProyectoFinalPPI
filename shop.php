@@ -61,7 +61,7 @@
               <a href="cart.php" class="icons-btn d-inline-block bag">
                 <span class="icon-shopping-bag"></span>
               </a>
-              <a href="login.html" class="icons-btn d-inline-block bag">
+              <a href="loginForm.php" class="icons-btn d-inline-block bag">
                 <span class="icon-user"></span>
               </a>
               <span><?php echo $usuario ?></span>
@@ -81,10 +81,10 @@
     <div class="site-section">
       <div class="container">
 
-        <div class="row mb-5">
-          <div class="col-md-9 order-1">
+        <div class="row mb-6">
+          <div class="col-md-6 order-1">
             <div class="row align">
-              <div class="col-md-12 mb-5">
+              <div class="col-md-6 mb-5">
                 <div class="float-md-left"><h1 class="text-black h5">Todos los Productos</h1></div>
               </div>
             </div>
@@ -101,10 +101,10 @@
                 $nombre=$row['nombreproducto'];
                 $img=$row['imagen'];
                 $idproducto=$row['idproducto'];
-                echo "<div class='row mb-5'>";
-                echo "<div class='col-lg-6 col-md-6 item-entry mb-6'>";
+                echo "<div class='row mb-3'>";
+                echo "<div class='col-lg-12 col-md-12 item-entry mb-12'>";
                 echo "<a href=# class='product-item md-height bg-gray d-block'>";
-                echo "<img src='./img/". $img ."'alt='Image class=img-fluid'>";
+                echo "<img src='./images/". $img ."'alt='Image class=img-fluid'>";
                 echo "</a>";
                 echo "<h2 class='item-title'>". $nombre ."</h2>";
                 echo "<strong class='item-price'>Precio: ". $precio ."</strong>";

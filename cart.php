@@ -67,7 +67,7 @@
                   <a href="cart.php" class="icons-btn d-inline-block bag">
                     <span class="icon-shopping-bag"></span>
                   </a>
-                  <a href="login.html" class="icons-btn d-inline-block bag">
+                  <a href="loginForm.php" class="icons-btn d-inline-block bag">
                     <span class="icon-user"></span>
                   </a>
                   <span><?php echo $usuario ?></span>
@@ -118,7 +118,7 @@
                         $nombre=$col['nombreproducto'];
 
                         echo "<td class='product-thumbnail'>";
-                        echo "<img src='./images". $img ."' alt='Image' class='img-fluid'>";
+                        echo "<img src='./images/". $img ."' alt='Image' class='img-fluid'>";
                         echo "</td>";
                         echo "<td class='product-name'>";
                         echo "<h2 class='h5 text-black'>". $col['nombreproducto'] ."</h2>";

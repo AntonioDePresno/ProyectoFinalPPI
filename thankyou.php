@@ -64,7 +64,7 @@
               <a href="cart.php" class="icons-btn d-inline-block bag">
                 <span class="icon-shopping-bag"></span>
               </a>
-              <a href="login.html" class="icons-btn d-inline-block bag">
+              <a href="loginForm.php" class="icons-btn d-inline-block bag">
                 <span class="icon-user"></span>
               </a>
               <span><?php echo $usuario ?></span>
