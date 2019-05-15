@@ -48,7 +48,7 @@
         <div class="d-flex align-items-center justify-content-between">
           <div class="logo">
             <div class="site-logo">
-              <a href="index.html" class="js-logo-clone">Fashion</a>
+              <a href="index.php" class="js-logo-clone">Fashion</a>
             </div>
           </div>
           <div class="main-nav d-none d-lg-block">
