@@ -25,11 +25,13 @@
     session_start();
     $usuario="";
     $cerrar="";
-    if(isset($_SESSION["admin"])){
+    if(isset($_SESSION["usuario"])){
+      $id=$_SESSION["id"];
       $usuario=$_SESSION["usuario"];
       $cerrar="Cerrar Sesion";
+      $con=mysqli_connect("localhost","root","","ProyectoFinalPPI");
     }else{
-        //header("Location: login.html");
+        header("Location: loginForm.php");
     }
   ?>
   <div class="site-wrap">
@@ -72,4 +74,49 @@
         </div>
       </div>
     </div>
+    <div class="site-blocks-table">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th class="product-thumbnail"></th>
+                    <th class="product-name">Nombre</th>
+                    <th class="product-name">Correo</th>
+                    <th class="product-name">Fecha de Nacimiento</th>
+                    <th class="product-name">Tarjeta</th>
+                    <th class="product-name">Direccion</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                    <?php
+                    $result=mysqli_query($con,"SELECT * FROM usuario WHERE idusuario='$id';");
+                      
+                      while($row=mysqli_fetch_array($result)){
+                        $nombre=$row['nombre'];
+                        $correo=$row['correo'];
+                        $fecha=$row['fechanac'];
+                        $tarjeta=$row['tarjeta'];
+                        $dir=$row['direccion'];
+                        
+                        echo "<tr>";
+                        echo "<td class='product-thumbnail'>";
+                        echo "<img src='./images/user.jpg' alt='Image' class='img-fluid'>";
+                        echo "</td>";
+                        echo "<td class='product-name'>";
+                        echo "<h2 class='h5 text-black'>". $nombre ."</h2>";
+                        echo "</td>";
+                        echo "<td>". $correo ."</td>";
+                        echo "<td>". $fecha . "</td>";
+                        echo "<td>". $tarjeta ."</td>";
+                        echo "<td>". $dir ."</td>";
+                        echo "</tr>";
+
+                      }
+                      
+                    mysqli_close($con);
+                    ?>
+                </tbody>
+              </table>
+            </div>
 </body>
+</html>

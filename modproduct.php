@@ -16,5 +16,7 @@
         echo "UPDATE producto SET $campo='$info' WHERE idproducto='$id';";
         $query1="UPDATE producto SET $campo='$info' WHERE idproducto='$id';";
         mysqli_query($con,$query1);
+
+        header("Location: admin.php");
     }
 ?>

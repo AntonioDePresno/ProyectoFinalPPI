@@ -33,7 +33,7 @@
 
           $con=mysqli_connect("localhost","root","","ProyectoFinalPPI");
       }else{
-        header("Location: login.php"); 
+        header("Location: loginForm.php"); 
       }
     ?>
       <div class="site-wrap">

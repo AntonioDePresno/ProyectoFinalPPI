@@ -97,7 +97,7 @@
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="index.php">Inicio</a> <span class="mx-2 mb-0">/</span> <a href="shop.html">Productos</a><span class="mx-2 mb-0">/</span> <strong class="text-black">Producto</strong></div>
+          <div class="col-md-12 mb-0"><a href="index.php">Inicio</a> <span class="mx-2 mb-0">/</span> <a href="shop.php">Productos</a><span class="mx-2 mb-0">/</span> <strong class="text-black">Producto</strong></div>
         </div>
       </div>
     </div>  
@@ -125,7 +125,7 @@
             echo "<p class='mb-4'>Disponibles: ". $disponibilidad ."</p>";
             ?>
             <div class="mb-5">
-              <form action="addcart.php" method="get">
+              <form action="addcart.php" method="GET">
                 <div class="input-group mb-3" style="max-width: 120px;">
                 <div class="input-group-prepend">
                   <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
@@ -135,9 +135,8 @@
                   <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
                 </div>
               </div>
-
               </div>
-              <button class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary" name="producto" value="<?php echo "$producto"?>">Agregar al Carrito</a></p>
+              <button class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary" name="producto" value="<?php echo $producto;?>">Agregar al Carrito</a></p>
             </form>
           </div>
         </div>

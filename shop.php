@@ -101,13 +101,13 @@
                 $nombre=$row['nombreproducto'];
                 $img=$row['imagen'];
                 $idproducto=$row['idproducto'];
-                echo "<div class='row mb-3'>";
+                echo "<div class='row mb-12'>";
                 echo "<div class='col-lg-12 col-md-12 item-entry mb-12'>";
                 echo "<a href=# class='product-item md-height bg-gray d-block'>";
                 echo "<img src='./images/". $img ."'alt='Image class=img-fluid'>";
                 echo "</a>";
                 echo "<h2 class='item-title'>". $nombre ."</h2>";
-                echo "<strong class='item-price'>Precio: ". $precio ."</strong>";
+                echo "<strong class='item-price'>Precio: $". $precio ."</strong>";
                 echo "<form action='shop-single.php' method='get'>";
                 echo "<button class='btn btn-primary btn-lg btn-block' name=producto value='". $idproducto ."'>Ver mas</button>";
                 echo "</form>";

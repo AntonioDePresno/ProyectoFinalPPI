@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ShopMax &mdash; Colorlib e-Commerce Template</title>
+    <title>Fashion | Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -97,7 +97,7 @@
                 <div class="form-group row">
                   <div class="col-md-12">
                     <label for="c_contra" class="text-black">Contraseña<span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="c_contra" name="c_contra" placeholder="Contraseña" required>
+                    <input type="password" class="form-control" id="c_contra" name="c_contra" placeholder="Contraseña" required>
                   </div>
                 </div>
 
