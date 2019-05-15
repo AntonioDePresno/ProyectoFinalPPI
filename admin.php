@@ -29,7 +29,7 @@
       $usuario=$_SESSION["usuario"];
       $cerrar="Cerrar Sesion";
     }else{
-        header("Location: login.html");
+        header("Location: loginForm.php");
     }
   ?>
   <div class="site-wrap">
